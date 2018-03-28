@@ -25677,3 +25677,34 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+.ion-register {
+  font-size: 15px;
+}
+
+.blog-header {
+  text-align: center;
+}
+
+h4.title-h4 {
+  color: #393939;
+}
+
+.bl-login {
+  margin-top: 25px !important;
+  display: block;
+}
+
+h4.title-h4 {
+  color: #393939;
+  margin-top: 10px !important;
+}
+
+p.ion-error {
+  color: #c31414;
+  font-size: 13px;
+}
+
+.message-box {
+  padding-left: 16px;
+}

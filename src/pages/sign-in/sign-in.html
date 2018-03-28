@@ -1,0 +1,38 @@
+<ion-content padding>
+  <div class="blog-header">
+    <div class="logo">
+      <img src="assets/imgs/chart@1x.png" alt="">
+    </div>
+    <div class="title">
+      <h4 class="title-h4">Managing your money. <br>Where is my money going day-to-day?</h4>
+
+    </div>
+  </div>
+  <form [formGroup]="formGroup" (ngSubmit)="LoginForm()">
+    <ion-item>
+      <ion-label color="primary" stacked>Email</ion-label>
+      <ion-input type="email" placeholder="Enter email address" class="ion-register" formControlName="email"></ion-input>
+    </ion-item>
+    <div class="message-box" *ngIf="email.hasError('email') && email.touched">
+      <p class="ion-error">The field email address is require</p>
+    </div>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Password</ion-label>
+      <ion-input type="password" placeholder="Enter password" class="ion-register" formControlName="password"></ion-input>
+    </ion-item>
+    <div class="message-box" *ngIf="password.hasError('required') && password.touched">
+      <p class="ion-error">The field password is require</p>
+    </div>
+    <div class="bl-login">
+      <button ion-button  type="submit" full [disabled]="!formGroup.valid">Login</button>
+    </div>
+    <div class="ready-account">
+      <p>
+        Not yet have an account? <a href="#" (click)="registerForm()">Register Here</a>
+      </p>
+    </div>
+
+  </form>
+
+</ion-content>
