@@ -8,6 +8,10 @@ import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
 import {RegisterPage} from  '../pages/register/register';
 import {SignInPage} from  '../pages/sign-in/sign-in';
+import {AngularFireModule} from "angularfire2";
+import {environment} from "../environments/environment";
+import {AngularFireAuthModule} from "angularfire2/auth";
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,11 +19,14 @@ import {SignInPage} from  '../pages/sign-in/sign-in';
         MyApp,
         HomePage,
         RegisterPage,
-        SignInPage
+        SignInPage ,
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireAuthModule ,
+        HttpClientModule,
     ],
     bootstrap: [IonicApp],
     entryComponents: [

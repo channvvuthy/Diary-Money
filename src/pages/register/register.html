@@ -8,8 +8,8 @@
 
         </div>
     </div>
-    <form [formGroup]="formGroup" (ngSubmit)="registerForm()">
-        <ion-item>
+    <form [formGroup]="formGroup" (ngSubmit)="registerForm(formGroup.value)">
+        <ion-item>                     
             <ion-label color="primary" stacked>Email</ion-label>
             <ion-input type="email" placeholder="Enter email address" class="ion-register" formControlName="email"></ion-input>
         </ion-item>
@@ -41,5 +41,4 @@
         </div>
 
     </form>
-
 </ion-content>
