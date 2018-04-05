@@ -1,6 +1,85 @@
-webpackJsonp([1],{
+webpackJsonp([2],{
 
-/***/ 114:
+/***/ 104:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerifyPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sign_in_sign_in__ = __webpack_require__(159);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the VerifyPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var VerifyPage = /** @class */ (function () {
+    function VerifyPage(navCtrl, navParams, formBuilder, http, alertCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.formBuilder = formBuilder;
+        this.http = http;
+        this.alertCtrl = alertCtrl;
+        this.formGroup = this.formBuilder.group({
+            token: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]
+        });
+        this.token = this.formGroup.controls['token'];
+    }
+    VerifyPage.prototype.presentAlert = function (title, msg) {
+        var alert = this.alertCtrl.create({
+            title: title,
+            subTitle: msg,
+            buttons: ['Ok']
+        });
+        alert.present();
+    };
+    VerifyPage.prototype.verifyForm = function (user) {
+        var _this = this;
+        this.data = this.http.get("http://localhost:8000/user/verify/" + user.token).subscribe(function (data) {
+            if (data.success == true) {
+                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__sign_in_sign_in__["a" /* SignInPage */]);
+            }
+            else {
+                _this.presentAlert("Verify", "Verification code is invalid.");
+            }
+        });
+    };
+    VerifyPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad VerifyPage');
+    };
+    VerifyPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-verify',template:/*ion-inline-start:"E:\MyTask\2018\3\Diary-Money\src\pages\verify\verify.html"*/'<!--\n  Generated template for the VerifyPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <ion-title>Verify</ion-title>\n    </ion-navbar>\n</ion-header>\n<ion-content padding>\n    <div class="blog-header">\n        <div class="logo">\n            <img src="assets/imgs/chart@1x.png" alt="">\n        </div>\n        <div class="title">\n            <h4 class="title-h4">Managing your money. <br>Where is my money going day-to-day?</h4>\n        </div>\n    </div>\n    <form [formGroup]="formGroup" (ngSubmit)="verifyForm(formGroup.value)">\n        <ion-item>\n            <ion-label color="primary" stacked>Verify code</ion-label>\n            <ion-input type="text" placeholder="Pasting url verify code" class="ion-register" formControlName="token"></ion-input>\n        </ion-item>\n        <div class="message-box" *ngIf="token.hasError(\'required\') && token.touched">\n            <p class="ion-error">The field code  is required</p>\n        </div>\n        <div class="bl-login">\n            <button ion-button type="submit" full [disabled]="!formGroup.valid">Verify</button>\n        </div>\n    </form>\n</ion-content>\n'/*ion-inline-end:"E:\MyTask\2018\3\Diary-Money\src\pages\verify\verify.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
+    ], VerifyPage);
+    return VerifyPage;
+    var _a, _b, _c, _d, _e;
+}());
+
+//# sourceMappingURL=verify.js.map
+
+/***/ }),
+
+/***/ 115:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,16 +92,20 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 114;
+webpackEmptyAsyncContext.id = 115;
 
 /***/ }),
 
-/***/ 157:
+/***/ 158:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/register/register.module": [
-		321,
+		322,
+		1
+	],
+	"../pages/verify/verify.module": [
+		323,
 		0
 	]
 };
@@ -37,22 +120,22 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 157;
+webpackAsyncContext.id = 158;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 158:
+/***/ 159:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignInPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(168);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -150,7 +233,7 @@ var SignInPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-sign-in',template:/*ion-inline-start:"E:\MyTask\2018\3\Diary-Money\src\pages\sign-in\sign-in.html"*/'<ion-content padding>\n  <div class="blog-header">\n    <div class="logo">\n      <img src="assets/imgs/chart@1x.png" alt="">\n    </div>\n    <div class="title">\n      <h4 class="title-h4">Managing your money. <br>Where is my money going day-to-day?</h4>\n\n    </div>\n  </div>\n  <form [formGroup]="formGroup" (ngSubmit)="LoginForm(formGroup.value)">\n    <ion-item>\n      <ion-label color="primary" stacked>Email</ion-label>\n      <ion-input type="email" placeholder="Enter email address" class="ion-register" formControlName="email"></ion-input>\n    </ion-item>\n    <div class="message-box" *ngIf="email.hasError(\'email\') && email.touched">\n      <p class="ion-error">The field email address is require</p>\n    </div>\n\n    <ion-item>\n      <ion-label color="primary" stacked>Password</ion-label>\n      <ion-input type="password" placeholder="Enter password" class="ion-register" formControlName="password"></ion-input>\n    </ion-item>\n    <div class="message-box" *ngIf="password.hasError(\'required\') && password.touched">\n      <p class="ion-error">The field password is require</p>\n    </div>\n    <div class="bl-login">\n      <button ion-button  type="submit" full [disabled]="!formGroup.valid">Login</button>\n    </div>\n    <div class="ready-account">\n      <p>\n        Not yet have an account? <a href="#" (click)="registerForm()">Register Here</a>\n      </p>\n    </div>\n\n  </form>\n\n</ion-content>\n'/*ion-inline-end:"E:\MyTask\2018\3\Diary-Money\src\pages\sign-in\sign-in.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */]])
     ], SignInPage);
     return SignInPage;
 }());
@@ -159,13 +242,13 @@ var SignInPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 167:
+/***/ 168:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(79);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -189,7 +272,7 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"E:\MyTask\2018\3\Diary-Money\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  The world is your oyster.\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n  </p>\n</ion-content>\n'/*ion-inline-end:"E:\MyTask\2018\3\Diary-Money\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]])
     ], HomePage);
     return HomePage;
 }());
@@ -198,13 +281,13 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 212:
+/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(234);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -212,30 +295,32 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 233:
+/***/ 234:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(319);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_register_register__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_sign_in_sign_in__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_sign_in_sign_in__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__environments_environment__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__environments_environment__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angularfire2_auth__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_common_http__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_common_http__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_verify_verify__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -259,29 +344,32 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
                 __WEBPACK_IMPORTED_MODULE_7__pages_register_register__["a" /* RegisterPage */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_sign_in_sign_in__["a" /* SignInPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_verify_verify__["a" /* VerifyPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/verify/verify.module#VerifyPageModule', name: 'VerifyPage', segment: 'verify', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_9_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_10__environments_environment__["a" /* environment */].firebase),
                 __WEBPACK_IMPORTED_MODULE_11_angularfire2_auth__["b" /* AngularFireAuthModule */],
                 __WEBPACK_IMPORTED_MODULE_12__angular_common_http__["b" /* HttpClientModule */],
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
                 __WEBPACK_IMPORTED_MODULE_7__pages_register_register__["a" /* RegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_sign_in_sign_in__["a" /* SignInPage */]
+                __WEBPACK_IMPORTED_MODULE_8__pages_sign_in_sign_in__["a" /* SignInPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_verify_verify__["a" /* VerifyPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
             ]
         })
     ], AppModule);
@@ -292,15 +380,15 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 319:
+/***/ 320:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_register_register__ = __webpack_require__(52);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -329,16 +417,17 @@ var MyApp = /** @class */ (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"E:\MyTask\2018\3\Diary-Money\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"E:\MyTask\2018\3\Diary-Money\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
     ], MyApp);
     return MyApp;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 320:
+/***/ 321:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -364,10 +453,11 @@ var environment = {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sign_in_sign_in__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sign_in_sign_in__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__verify_verify__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -382,12 +472,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var RegisterPage = /** @class */ (function () {
-    function RegisterPage(navCtrl, navParams, formBuilder, http) {
+    function RegisterPage(navCtrl, navParams, formBuilder, http, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.formBuilder = formBuilder;
         this.http = http;
+        this.alertCtrl = alertCtrl;
         this.formGroup = this.formBuilder.group({
             email: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].email],
             password: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required],
@@ -397,12 +490,35 @@ var RegisterPage = /** @class */ (function () {
         this.password = this.formGroup.controls['password'];
         this.phone = this.formGroup.controls['phone'];
     }
+    RegisterPage.prototype.presentAlert = function (title, msg) {
+        var alert = this.alertCtrl.create({
+            title: title,
+            subTitle: msg,
+            buttons: ['Ok']
+        });
+        alert.present();
+    };
     RegisterPage.prototype.registerForm = function (user) {
+        var _this = this;
         if (this.formGroup.valid) {
-            var url = "http://365daymarket.com/api/product/1";
-            this.data = this.http.get(url);
+            document.getElementById("loading").style.display = "block";
+            var postData = new FormData();
+            postData.append('email', user.email);
+            postData.append('phone', user.phone);
+            postData.append('password', user.password);
+            this.data = this.http.post("http://localhost:8000/register", postData);
             this.data.subscribe(function (data) {
-                console.log(data);
+                if (data.success == true) {
+                    document.getElementById("loading").style.display = "none";
+                    _this.formGroup.reset();
+                    _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__verify_verify__["a" /* VerifyPage */]);
+                }
+                else {
+                    document.getElementById("loading").style.display = "none";
+                    _this.presentAlert("Registration failed", data.error.email);
+                }
+            }, function (err) {
+                _this.presentAlert("Registration failed", JSON.stringify(err));
             });
         }
     };
@@ -411,17 +527,16 @@ var RegisterPage = /** @class */ (function () {
     };
     RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"E:\MyTask\2018\3\Diary-Money\src\pages\register\register.html"*/'<ion-content padding>\n    <div class="blog-header">\n        <div class="logo">\n            <img src="assets/imgs/chart@1x.png" alt="">\n        </div>\n        <div class="title">\n            <h4 class="title-h4">Managing your money. <br>Where is my money going day-to-day?</h4>\n\n        </div>\n    </div>\n    <form [formGroup]="formGroup" (ngSubmit)="registerForm(formGroup.value)">\n        <ion-item>                     \n            <ion-label color="primary" stacked>Email</ion-label>\n            <ion-input type="email" placeholder="Enter email address" class="ion-register" formControlName="email"></ion-input>\n        </ion-item>\n        <div class="message-box" *ngIf="email.hasError(\'email\') && email.touched">\n            <p class="ion-error">The field email address is require</p>\n        </div>\n\n        <ion-item>\n            <ion-label color="primary" stacked>Password</ion-label>\n            <ion-input type="password" placeholder="Enter password" class="ion-register" formControlName="password"></ion-input>\n        </ion-item>\n        <div class="message-box" *ngIf="password.hasError(\'required\') && password.touched">\n            <p class="ion-error">The field password is require</p>\n        </div>\n        <ion-item>\n            <ion-label color="primary" stacked>Phone</ion-label>\n            <ion-input type="number" placeholder="Enter phone number" class="ion-register" formControlName="phone"></ion-input>\n        </ion-item>\n        <div class="message-box" *ngIf="phone.hasError(\'required\') && phone.touched">\n            <p class="ion-error">The field phone is require</p>\n        </div>\n        <div class="bl-login">\n            <button ion-button  type="submit" full [disabled]="!formGroup.valid">Register</button>\n        </div>\n        <div class="ready-account">\n            <p>\n                Already have an account? <a href="#" (click)="goToLogin()">Login Here</a>\n            </p>\n        </div>\n\n    </form>\n</ion-content>\n'/*ion-inline-end:"E:\MyTask\2018\3\Diary-Money\src\pages\register\register.html"*/,
+            selector: 'page-register',template:/*ion-inline-start:"E:\MyTask\2018\3\Diary-Money\src\pages\register\register.html"*/'<ion-content padding>\n    <div class="blog-header">\n        <div class="logo">\n            <img src="assets/imgs/chart@1x.png" alt="">\n        </div>\n        <div class="title">\n            <h4 class="title-h4">Managing your money. <br>Where is my money going day-to-day?</h4>\n\n        </div>\n    </div>\n    <form [formGroup]="formGroup" (ngSubmit)="registerForm(formGroup.value)">\n        <ion-item>                     \n            <ion-label color="primary" stacked>Email</ion-label>\n            <ion-input type="email" placeholder="Enter email address" class="ion-register" formControlName="email"></ion-input>\n        </ion-item>\n        <div class="message-box" *ngIf="email.hasError(\'email\') && email.touched">\n            <p class="ion-error">The field email address is require</p>\n        </div>\n\n        <ion-item>\n            <ion-label color="primary" stacked>Password</ion-label>\n            <ion-input type="password" placeholder="Enter password" class="ion-register" formControlName="password"></ion-input>\n        </ion-item>\n        <div class="message-box" *ngIf="password.hasError(\'required\') && password.touched">\n            <p class="ion-error">The field password is require</p>\n        </div>\n        <ion-item>\n            <ion-label color="primary" stacked>Phone</ion-label>\n            <ion-input type="number" placeholder="Enter phone number" class="ion-register" formControlName="phone"></ion-input>\n        </ion-item>\n        <div class="message-box" *ngIf="phone.hasError(\'required\') && phone.touched">\n            <p class="ion-error">The field phone is require</p>\n        </div>\n        <div class="loading" id="loading">\n            \n            <ion-spinner icon="dots" class="spinner-dark"></ion-spinner>\n        </div>\n        <div class="bl-login">\n            <button ion-button  type="submit" full [disabled]="!formGroup.valid">Register</button>\n        </div>\n        <div class="ready-account">\n            <p>\n                Already have an account? <a href="#" (click)="goToLogin()">Login Here</a>\n            </p>\n        </div>\n\n    </form>\n</ion-content>\n'/*ion-inline-end:"E:\MyTask\2018\3\Diary-Money\src\pages\register\register.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], RegisterPage);
     return RegisterPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=register.js.map
 
 /***/ })
 
-},[212]);
+},[213]);
 //# sourceMappingURL=main.js.map

@@ -31,6 +31,10 @@
         <div class="message-box" *ngIf="phone.hasError('required') && phone.touched">
             <p class="ion-error">The field phone is require</p>
         </div>
+        <div class="loading" id="loading">
+            
+            <ion-spinner icon="dots" class="spinner-dark"></ion-spinner>
+        </div>
         <div class="bl-login">
             <button ion-button  type="submit" full [disabled]="!formGroup.valid">Register</button>
         </div>

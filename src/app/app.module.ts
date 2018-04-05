@@ -11,7 +11,8 @@ import {SignInPage} from  '../pages/sign-in/sign-in';
 import {AngularFireModule} from "angularfire2";
 import {environment} from "../environments/environment";
 import {AngularFireAuthModule} from "angularfire2/auth";
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
+import {VerifyPage} from "../pages/verify/verify";
 
 
 @NgModule({
@@ -19,13 +20,14 @@ import { HttpClientModule } from '@angular/common/http';
         MyApp,
         HomePage,
         RegisterPage,
-        SignInPage ,
+        SignInPage,
+        VerifyPage
     ],
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
         AngularFireModule.initializeApp(environment.firebase),
-        AngularFireAuthModule ,
+        AngularFireAuthModule,
         HttpClientModule,
     ],
     bootstrap: [IonicApp],
@@ -33,12 +35,13 @@ import { HttpClientModule } from '@angular/common/http';
         MyApp,
         HomePage,
         RegisterPage,
-        SignInPage
+        SignInPage,
+        VerifyPage
     ],
     providers: [
         StatusBar,
         SplashScreen,
-        {provide: ErrorHandler, useClass: IonicErrorHandler}
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
     ]
 })
 export class AppModule {

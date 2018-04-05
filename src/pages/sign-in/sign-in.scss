@@ -1,3 +1,34 @@
 page-sign-in {
-
+  .loading{
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+  }
+  .ion-register {
+    font-size: 15px;
+  }
+  .blog-header {
+    text-align: center;
+  }
+  h4.title-h4 {
+    color: #393939;
+  }
+  .bl-login {
+    margin-top: 25px !important;
+    display:block;
+  }
+  h4.title-h4 {
+    color: #393939;
+    margin-top: 10px !important;
+  }
+  p.ion-error {
+    color: #c31414;
+    font-size: 13px;
+  }
+  .message-box {
+    padding-left: 16px;
+  }
+  .err-message{
+    color: #c31414;
+  }
 }

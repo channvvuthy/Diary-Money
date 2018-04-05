@@ -25678,33 +25678,125 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
-.ion-register {
+page-register .loading {
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}
+
+page-register .ion-register {
   font-size: 15px;
 }
 
-.blog-header {
+page-register .blog-header {
   text-align: center;
 }
 
-h4.title-h4 {
+page-register h4.title-h4 {
   color: #393939;
 }
 
-.bl-login {
+page-register .bl-login {
   margin-top: 25px !important;
   display: block;
 }
 
-h4.title-h4 {
+page-register h4.title-h4 {
   color: #393939;
   margin-top: 10px !important;
 }
 
-p.ion-error {
+page-register p.ion-error {
   color: #c31414;
   font-size: 13px;
 }
 
-.message-box {
+page-register .message-box {
   padding-left: 16px;
+}
+
+page-register .err-message {
+  color: #c31414;
+}
+
+page-sign-in .loading {
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}
+
+page-sign-in .ion-register {
+  font-size: 15px;
+}
+
+page-sign-in .blog-header {
+  text-align: center;
+}
+
+page-sign-in h4.title-h4 {
+  color: #393939;
+}
+
+page-sign-in .bl-login {
+  margin-top: 25px !important;
+  display: block;
+}
+
+page-sign-in h4.title-h4 {
+  color: #393939;
+  margin-top: 10px !important;
+}
+
+page-sign-in p.ion-error {
+  color: #c31414;
+  font-size: 13px;
+}
+
+page-sign-in .message-box {
+  padding-left: 16px;
+}
+
+page-sign-in .err-message {
+  color: #c31414;
+}
+
+page-verify .loading {
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}
+
+page-verify .ion-register {
+  font-size: 15px;
+}
+
+page-verify .blog-header {
+  text-align: center;
+}
+
+page-verify h4.title-h4 {
+  color: #393939;
+}
+
+page-verify .bl-login {
+  margin-top: 25px !important;
+  display: block;
+}
+
+page-verify h4.title-h4 {
+  color: #393939;
+  margin-top: 10px !important;
+}
+
+page-verify p.ion-error {
+  color: #c31414;
+  font-size: 13px;
+}
+
+page-verify .message-box {
+  padding-left: 16px;
+}
+
+page-verify .err-message {
+  color: #c31414;
 }
