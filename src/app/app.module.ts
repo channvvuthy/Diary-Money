@@ -13,6 +13,9 @@ import {environment} from "../environments/environment";
 import {AngularFireAuthModule} from "angularfire2/auth";
 import {HttpClientModule} from '@angular/common/http';
 import {VerifyPage} from "../pages/verify/verify";
+import {SMS} from "@ionic-native/sms";
+import { CallNumber } from '@ionic-native/call-number';
+
 
 
 @NgModule({
@@ -42,6 +45,8 @@ import {VerifyPage} from "../pages/verify/verify";
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
+        SMS,
+        CallNumber,
     ]
 })
 export class AppModule {

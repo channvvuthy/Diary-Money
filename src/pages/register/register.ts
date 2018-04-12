@@ -5,6 +5,7 @@ import {SignInPage} from '../sign-in/sign-in';
 import {HttpClient} from '@angular/common/http';
 import {AlertController} from 'ionic-angular';
 import {VerifyPage} from "../verify/verify";
+import {Observable} from "rxjs/Observable";
 @IonicPage()
 @Component({
     selector: 'page-register',
